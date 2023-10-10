@@ -186,6 +186,8 @@ impeach %>%
 
 Use the mutate() function to create two new columns: one that extracts the year from date_announced, and a second that extracts the month.
 
+ANSWER: Extracted using Lubridate.
+
 ```{r}
 
 impeach <- impeach %>% 
