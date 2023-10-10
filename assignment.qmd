@@ -1,6 +1,6 @@
 ---
 title: "R Assignment #3"
-author: "Put Your Name Here"
+author: "Sarina Oshiro"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
