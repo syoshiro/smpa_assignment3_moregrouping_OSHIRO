@@ -188,8 +188,11 @@ Use the mutate() function to create two new columns: one that extracts the year 
 
 ```{r}
 
-impeach %>% 
-  mutate(date_nnounced )
+impeach <- impeach %>% 
+  mutate(year_announced=lubridate::year(impeach$date_announced),
+         month_announced=lubridate::month(impeach$date_announced))
+
+
 
 
 
@@ -201,11 +204,20 @@ impeach %>%
 
 8)  Using the new columns you created in #7, use grouping to count up how many House Democrats during each month announced their support of impeachment.
 
+ANSWER: without consideration of the year, Jan = 3, April = 7, May = 39, June = 27, July = 33, August = 18, Sept = 76, Nov = 2, and Dec = 4. The picture changes if we also group by year of announcement (see code below for that).
+
 ```{r}
 
-  
+#If we just want to group by month, with no distinction for year 
+impeach %>% 
+  group_by(month_announced) %>% 
+  summarise(n())
 
-
+#If we want to differentiate month AND year (so Jan of 2017 is not grouped together with Jan of 2019)
+impeach %>% 
+  group_by(year_announced, month_announced) %>% 
+  summarise(n()) %>% 
+  arrange(year_announced, month_announced) %>% 
 
 
 
