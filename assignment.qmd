@@ -49,7 +49,8 @@ Write your code using grouping in the chunks below to help answer the following 
 
 impeach %>% 
   group_by(for_impeachment) %>% 
-  summarise(for_impeachment = n())
+  summarise(n()) %>% 
+  View()
 
 ```
 
@@ -63,7 +64,8 @@ ANSWER: Of those who voted NO, there were 7 members ABOVE GPD national average a
 
 impeach %>% 
   group_by(gdp_above_national, for_impeachment) %>% 
-  summarise(gdp_above_national = n()) 
+  summarise(n()) %>% 
+  View()
 
 
 
@@ -84,7 +86,8 @@ ANSWER: Of those who voted NO on impeachment, there were 7 ABOVE national bachel
 
 impeach %>% 
   group_by(for_impeachment, pct_bachelors_compared_to_national) %>% 
-  summarise(pct_bachelors_compared_to_national = n()) 
+  summarise(n()) %>% 
+  View()
 
 
 
@@ -106,7 +109,9 @@ ANSWER: For NO on impeachment districts, the average percent of bachelors degree
 
 impeach %>% 
   group_by(for_impeachment) %>% 
-  summarise(mean_pct = mean(pct_bachelors))
+  summarise(n(),
+            mean_pct = mean(pct_bachelors)) %>% 
+  View()
 
 
 
@@ -124,7 +129,9 @@ ANSWER: For NO on impeachment districts, the average Trump vote percent was 43.8
 
 impeach %>% 
   group_by(for_impeachment) %>% 
-  summarise(mean_trump_pct = mean(trump_percent))
+  summarise(n(),
+            mean_trump_pct = mean(trump_percent)) %>% 
+  View()
 
 
 
@@ -143,7 +150,8 @@ ANSWER: Of the YES votes, 17 members won their 2018 election by "5 points or les
 impeach %>% 
   filter(for_impeachment == "YES") %>% 
   group_by(margin_flag_2018) %>% 
-  summarise(margin_flag_2018 = n())
+  summarise(n()) %>% 
+  View()
 
 
 
@@ -164,7 +172,8 @@ ANSWER: Of the NO votes, 9 members won their 2018 elections by 5 points or less.
 impeach %>% 
   filter(for_impeachment == "NO") %>% 
   group_by(margin_flag_2018) %>% 
-  summarise(margin_flag_2018 = n())
+  summarise(n()) %>% 
+  View()
 
 
 
@@ -179,7 +188,8 @@ Use the mutate() function to create two new columns: one that extracts the year 
 
 ```{r}
 
-  
+impeach %>% 
+  mutate(date_nnounced )
 
 
 
